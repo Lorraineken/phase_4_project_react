@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-
+import { NavLink } from "react-router-dom";
 
 function Header() {  
   return (
@@ -24,7 +24,7 @@ function Header() {
         <li>
           contact
         </li>
-        <button type="button" class="btn btn-secondary">Sign-in</button>
+        <NavLink to='/login'><button type="button" class="btn btn-secondary">Login</button></NavLink>
       </ul>
     </nav>
             
