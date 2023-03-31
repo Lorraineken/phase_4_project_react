@@ -6,7 +6,7 @@ import './App.css';
 import Header from './components/Header'
 import Home from './components/Home';
 import Signup from './components/Signup';
-
+import LogIn from './components/LogIn';
 
 
 function App() {
@@ -21,6 +21,10 @@ function App() {
         <Route
           path='/signup'
           element={<Signup />}
+        />
+            <Route
+        path ='/login'
+        element={<LogIn />}
         />
       </Routes>
       
