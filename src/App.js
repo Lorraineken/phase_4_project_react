@@ -1,4 +1,6 @@
 
+import React from 'react';
+import { Route,Routes} from 'react-router-dom';
 import './App.css';
 // import Navbar from './componets/Navbar';
 import Header from './components/Header'
@@ -11,7 +13,17 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Home />
+      <Routes>
+      <Route
+         path ="/"
+         element={<Home />}
+        />
+        <Route
+          path='/signup'
+          element={<Signup />}
+        />
+      </Routes>
+      
     </div>
   );
 }
