@@ -1,6 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Signup(){
+
+    const[full_name,SetFullName] = useState('')
+    const[user_name,SetUserName] = useState('')
+    const[email,SetEmail] = useState('')
+    const[password,SetPassword] = useState('')
 
     return (
         <div> 
