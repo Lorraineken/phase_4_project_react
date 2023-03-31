@@ -7,7 +7,7 @@ import Header from './components/Header'
 import Home from './components/Home';
 import Signup from './components/Signup';
 import LogIn from './components/LogIn';
-
+import About from './components/About'
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
         path ='/login'
         element={<LogIn />}
         />
+        <Route path="/about"  element={<About />}/>
       </Routes>
       
     </div>
