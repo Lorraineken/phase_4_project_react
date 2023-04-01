@@ -20,7 +20,7 @@ function App() {
      const [currentusername, setCurrentname] = useState('')
      const [currentuserId, setUserId] = useState('')
 
-       console.log(`CURRENT USER ${currentusername}`)
+      
   return (
     <div className="App">
       {/* <Header /> */}
@@ -42,7 +42,7 @@ function App() {
 
         <Route path="/pwchange" element={<PasswordChange />}/>
         <Route path="/logout" element ={<LogOut />}/>
-        <Route path="/Dashboard" element ={<Dashboard/>}/>
+        <Route path="/Dashboard" element ={<Dashboard currentusername={currentusername} currentuserId={currentuserId}/>}/>
       </Routes>
       
     </div>

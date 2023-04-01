@@ -37,6 +37,7 @@ const LogIn = ({setCurrentname,setUserId}) =>{
                 response.json().then((data) => {
                     setCurrentname(data.user_name)
                     setUserId(data.id)
+
                     console.log("signup was successful")
                    navigate("/workout")
                 });
