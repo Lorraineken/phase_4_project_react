@@ -14,12 +14,12 @@ function About() {
       
         <strong className="fs-2">About Us</strong>
         <br />
-        <span>
+        
           Welcome to our gym! We believe that fitness is a journey, not a
           destination. Our mission is to provide a welcoming and inclusive
           environment where people of all ages and fitness levels can come
           together to improve their health and well-being.
-        </span>
+        
         <br />
         <hr/ >
         <>
