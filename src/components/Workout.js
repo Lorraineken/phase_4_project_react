@@ -66,10 +66,10 @@ function Workout() {
                   <div>
                     <h4>My exercise</h4>
                     {exerciseData.map((exercise) => (
-                      <ul key={exercise.id}>
+                      <ol key={exercise.id}>
                         <li>{exercise.name}</li>
                         <li>{exercise.description}</li>
-                      </ul>
+                      </ol>
                     ))}
                   </div>
                 )}
