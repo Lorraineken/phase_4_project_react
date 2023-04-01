@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
-const LogIn = ({handleUserLoginAndSignup}) =>{
+const LogIn = () =>{
     // const history = useHistory()
     // const [state, setState] = useState({})
     // const onChange = (e) =>{

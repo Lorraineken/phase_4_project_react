@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, {useState} from 'react';
 import { Route,Routes} from 'react-router-dom';
 import './App.css';
 import { useState } from 'react';
@@ -17,6 +17,11 @@ import LogOut from './components/LogOut';
 
 function App() {
 
+    
+     const [currentusername, setCurrentname] = useState('')
+     const [currentuserId, setUserId] = useState('')
+     const [currentusermail, setUsermail] = useState('')
+     const [currentfullname, setFullname] = useState('')
 
 
   return (
