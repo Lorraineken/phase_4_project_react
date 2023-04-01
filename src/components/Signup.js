@@ -1,11 +1,17 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 function Signup(){
 
+    const SIGNUP_URL = 'https://palm-gym-api.onrender.com/signup'
+    const navigate = useNavigate()
+
     const[full_name,setFullName] = useState('')
     const[user_name,setUserName] = useState('')
-    const[email,setEmail] = useState('')
-    const[password,setPassword] = useState('')
+    const[email,setEmail] = useState()
+    const[password,setPassword] = useState()
+    const [errors, setErrors] = useState([]);
+    const [signedup,setSignedup] = useState(false)
 
     const formdata = {
         "full_name":full_name,
@@ -17,6 +23,30 @@ function Signup(){
     function handleSubmit(e){
         e.preventDefault()
         console.log(formdata)
+
+        fetch(SIGNUP_URL,{
+            method:"POST",
+            headers: {
+                "Content-Type": "application/json",
+              },
+            body:JSON.stringify(formdata)
+        }).then((response) => {
+            if (response.ok){
+                response.json().then(() => {
+                    setSignedup(true)
+                    console.log("signup was successful ")
+                    navigate('/login')
+                });
+            }else{
+                response.json().then((errorMessage) => 
+                {
+                    setErrors(errorMessage.errors)
+                    console.log(errors)
+                } )
+            }
+        })
+
+        
     }
 
     return (
