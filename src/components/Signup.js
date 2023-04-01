@@ -22,7 +22,8 @@ function Signup(){
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log(formdata)
+        // console.log(formdata)
+        navigate('/login')
 
         fetch(SIGNUP_URL,{
             method:"POST",
@@ -35,7 +36,7 @@ function Signup(){
                 response.json().then(() => {
                     setSignedup(true)
                     console.log("signup was successful ")
-                    navigate('/login')
+                   
                 });
             }else{
                 response.json().then((errorMessage) => 
