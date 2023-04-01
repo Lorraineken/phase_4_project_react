@@ -2,7 +2,6 @@
 import React, {useState} from 'react';
 import { Route,Routes} from 'react-router-dom';
 import './App.css';
-import { useState } from 'react';
 // import Navbar from './componets/Navbar';
 // import Header from './components/Header'
 import Home from './components/Home';
@@ -20,10 +19,8 @@ function App() {
     
      const [currentusername, setCurrentname] = useState('')
      const [currentuserId, setUserId] = useState('')
-     const [currentusermail, setUsermail] = useState('')
-     const [currentfullname, setFullname] = useState('')
 
-
+       console.log(`CURRENT USER ${currentusername}`)
   return (
     <div className="App">
       {/* <Header /> */}
@@ -38,7 +35,7 @@ function App() {
         />
             <Route
         path ='/login'
-        element={<LogIn />}
+        element={<LogIn setCurrentname={setCurrentname} setUserId={setUserId} />}
         />
         <Route path="/about"  element={<About />}/>
         <Route path="/workout"  element={<Workout />}/>

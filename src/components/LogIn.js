@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
-const LogIn = () =>{
+const LogIn = ({setCurrentname,setUserId}) =>{
     // const history = useHistory()
     // const [state, setState] = useState({})
     // const onChange = (e) =>{
@@ -34,8 +34,9 @@ const LogIn = () =>{
         
         
             if (response.ok){
-                response.json().then(() => {
-                    
+                response.json().then((data) => {
+                    setCurrentname(data.user_name)
+                    setUserId(data.id)
                     console.log("signup was successful")
                    navigate("/workout")
                 });
