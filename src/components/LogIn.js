@@ -67,6 +67,7 @@ const LogIn = ({handleUserLoginAndSignup}) =>{
                 <strong >New User</strong>
                 <br />
                <Link to='/signup'><button>Signup</button></Link>
+               <Link to='/pwchange'><button>Reset Password</button></Link>
             </form>
         </div>
     )

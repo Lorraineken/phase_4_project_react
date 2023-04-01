@@ -10,7 +10,11 @@ import Signup from './components/Signup';
 import LogIn from './components/LogIn';
 import About from './components/About'
 import Workout from './components/Workout';
+
+import PasswordChange from './components/PasswordChange';
+
 import LogOut from './components/LogOut';
+
 function App() {
 
 
@@ -33,6 +37,8 @@ function App() {
         />
         <Route path="/about"  element={<About />}/>
         <Route path="/workout"  element={<Workout />}/>
+
+        <Route path="/pwchange" element={<PasswordChange />}/>
         <Route path="/logout" element ={<LogOut />}/>
       </Routes>
       
