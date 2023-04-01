@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Myworkout.css';
+import UserNav from './UserNav';
 
 function Workout() {
   const [workoutData, setWorkoutData] = useState([]);
@@ -59,6 +60,7 @@ function Workout() {
 
   return (
     <div>
+      <UserNav/>
       <h4>Workouts</h4>
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {workoutData.map((workout) => (
