@@ -81,7 +81,7 @@ function Workout() {
                   My exercise
                 </button>
                 <button onClick={() => handleAddToFavourites(workout)}>
-                  Add to Favourites
+                  Add workout
                 </button>
                 {selectedWorkoutId === workout.id && showExerciseForm && (
                   <div className="exercise-form">
