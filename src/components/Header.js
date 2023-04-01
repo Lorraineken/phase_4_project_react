@@ -1,22 +1,26 @@
 import React from "react";
 import "./Header.css";
-
+import { NavLink } from "react-router-dom";
 
 function Header() {  
   return (
     <div className="header">
       
 
-      <div className="header__nav">
+      <div className="header__nav ">
         
           <div className="header__option">
           <nav>
-      <ul>
+      <ul className="">
+       
         <li>
-          Home
-        </li>
+
+          <NavLink to='/' className="btn btn-secondary"> Home</NavLink>
+        </li> 
         <li>
-          About Us
+        <NavLink to="/about" className="btn btn-secondary"> About Us</NavLink>
+       
+         
         </li>
         <li>
           Program
@@ -24,7 +28,7 @@ function Header() {
         <li>
           contact
         </li>
-        <button type="button" className="btn btn-secondary">Sign-in</button>
+        <NavLink to='/login'><button type="button" class="btn btn-secondary">Login</button></NavLink>
       </ul>
     </nav>
             
