@@ -1,12 +1,23 @@
 import { useState } from 'react'
-// import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 const LogIn = ({handleUserLoginAndSignup}) =>{
     // const history = useHistory()
-    const [state, setState] = useState({})
-    const onChange = (e) =>{
-        const {name, value } = e.target
-        setState({...state,[name]: value})
+    // const [state, setState] = useState({})
+    // const onChange = (e) =>{
+    //     const {name, value } = e.target
+    //     setState({...state,[name]: value})
+    // }
+    
+    const[user_name,setUserName] = useState('')
+    const[password,setPassword] = useState()
+    const navigate = useNavigate()
+
+    const formdata = {
+      
+        "user_name":user_name,
+      
+        "password":password
     }
     const onSubmit =(e) =>{
         e.preventDefault()
@@ -16,11 +27,14 @@ const LogIn = ({handleUserLoginAndSignup}) =>{
                 "Content-Type": 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify(state)
+            body: JSON.stringify(formdata)
         }
-        fetch('/login',config)
+        fetch('https://palm-gym-api.onrender.com/login',config)
         .then(resp =>resp.json())
-        .then(data => handleUserLoginAndSignup(data))
+        .then(data =>{
+            console.log(data)
+            navigate("/workout")
+        })
     }
     return(
         <div>
@@ -29,11 +43,11 @@ const LogIn = ({handleUserLoginAndSignup}) =>{
                 <br/ >
                 <label>Username</label>
                 <br />
-                <input onChange={onChange} name='user_name' type='text' />
+                <input onChange={(e)=>setUserName(e.target.value)} name='user_name' type='text' />
                 <br />
                 <label>Password</label>
                 <br />
-                <input onChange={onChange} name ='password' type ='password' />
+                <input onChange={(e)=>setPassword(e.target.value)} name ='password' type ='password' />
                 <br />
                 <button type='submit' content= 'Log In'>LOGIN</button>
                 <br />

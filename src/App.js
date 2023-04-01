@@ -8,7 +8,7 @@ import Home from './components/Home';
 import Signup from './components/Signup';
 import LogIn from './components/LogIn';
 import About from './components/About'
-
+import Workout from './components/Workout';
 function App() {
 
 
@@ -30,6 +30,7 @@ function App() {
         element={<LogIn />}
         />
         <Route path="/about"  element={<About />}/>
+        <Route path="/workout"  element={<Workout />}/>
       </Routes>
       
     </div>

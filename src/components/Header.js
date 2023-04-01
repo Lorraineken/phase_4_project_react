@@ -15,15 +15,15 @@ function Header() {
        
         <li>
 
-          <NavLink to='/' className="btn btn-secondary"> Home</NavLink>
+          <NavLink to='/' > Home</NavLink>
         </li> 
         <li>
-        <NavLink to="/about" className="btn btn-secondary"> About Us</NavLink>
+        <NavLink to="/about"> About Us</NavLink>
        
          
         </li>
         <li>
-          Program
+        <NavLink to="/workout"> workout</NavLink>
         </li>
         <li>
           contact
