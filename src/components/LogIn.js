@@ -30,11 +30,24 @@ const LogIn = ({handleUserLoginAndSignup}) =>{
             body: JSON.stringify(formdata)
         }
         fetch('https://palm-gym-api.onrender.com/login',config)
-        .then(resp =>resp.json())
-        .then(data =>{
-            console.log(data)
-            navigate("/workout")
-        })
+        .then(response =>{
+        
+        
+            if (response.ok){
+                response.json().then(() => {
+                    
+                    console.log("signup was successful")
+                   navigate("/workout")
+                });
+            }else{
+                response.json().then(() => 
+                {
+                    alert("Failed to login")
+                } )
+            
+        }
+    }
+        )
     }
     return(
         <div>
