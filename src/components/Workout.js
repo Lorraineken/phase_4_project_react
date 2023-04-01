@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './Myworkout.css';
+
+import { Link } from 'react-router-dom';
+
 import UserNav from './UserNav';
+
 
 function Workout() {
   const [workoutData, setWorkoutData] = useState([]);
@@ -8,6 +12,7 @@ function Workout() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedWorkoutId, setSelectedWorkoutId] = useState(null);
+  const [showExerciseForm, setShowExerciseForm] = useState(false);
 
   useEffect(() => {
     fetch('https://palm-gym-api.onrender.com/workouts')
@@ -33,10 +38,28 @@ function Workout() {
       .then((data) => {
         setExerciseData(data.exercises);
         setSelectedWorkoutId(workoutId);
+        setShowExerciseForm(true);
       })
       .catch((error) => {
         setError(error.message);
       });
+  };
+
+  const handleCloseExerciseForm = () => {
+    setShowExerciseForm(false);
+    setSelectedWorkoutId(null);
+    setExerciseData([]);
+  };
+
+  const handleAddToFavourites = (workout) => {
+    const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+    if (!favourites.find((favourite) => favourite.id === workout.id)) {
+      favourites.push(workout);
+      localStorage.setItem('favourites', JSON.stringify(favourites));
+      alert('Added to Favourites!');
+    } else {
+      alert('Workout already added to Favourites!');
+    }
   };
 
   if (loading) {
@@ -59,14 +82,18 @@ function Workout() {
                 <h4 className="card-title">Name: {workout.name}</h4>
                 <p className="card-text">Instructor: {workout.instructor}</p>
                 <p className="card-text">Category: {workout.category}</p>
-                <button
-                  onClick={() => handleExerciseClick(workout.id)}
-                >
+                <button onClick={() => handleExerciseClick(workout.id)}>
                   My exercise
                 </button>
-                {selectedWorkoutId === workout.id && (
-                  <div>
-                    <h4>My exercise</h4>
+                <button onClick={() => handleAddToFavourites(workout)}>
+                  Add workout
+                </button>
+                {selectedWorkoutId === workout.id && showExerciseForm && (
+                  <div className="exercise-form">
+                    <div className="exercise-form-header">
+                      <h4>My exercise</h4>
+                      <button onClick={handleCloseExerciseForm}>X</button>
+                    </div>
                     {exerciseData.map((exercise) => (
                       <ul key={exercise.id}>
                         <li>{exercise.name}</li>
