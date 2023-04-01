@@ -96,7 +96,7 @@ function Workout() {
                     </div>
                     {exerciseData.map((exercise) => (
                       <ul key={exercise.id}>
-                        <li>{exercise.name}</li>
+                       <strong><li>{exercise.name}</li></strong> 
                         <li>{exercise.description}</li>
                       </ul>
                     ))}

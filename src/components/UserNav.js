@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function UserNav() {
   return (
     
-      <div className="navbar navbar-light">
+      <div className="navbar navbar-light bg-">
 
         <Link className="navbar-brand" to="/">PalmGym</Link>
         
