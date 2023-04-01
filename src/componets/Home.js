@@ -13,7 +13,7 @@ const HomePage = () => {
     }}>
       <div style={{ textAlign: 'center' }}>
         <h1>Palm<br/>Fitness<br/>Hub<span>.</span></h1>
-        <h2>no pain no gain</h2>
+        <h2>No Pain No Gain</h2>
         <button type="button" class="btn btn-light">Join us today</button>
       </div>
     </div>

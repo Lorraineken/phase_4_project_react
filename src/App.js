@@ -1,13 +1,14 @@
 
 import './App.css';
-import Navbar from './componets/Navbar';
-import Header from './componets/Header'
+import Header from './componets/Header';
 import Home from './componets/Home';
+import MyWorkout from './componets/Myworkout';
 function App() {
   return (
     <div className="App">
       <Header />
       <Home />
+      <MyWorkout />
     </div>
   );
 }

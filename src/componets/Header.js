@@ -24,7 +24,7 @@ function Header() {
         <li>
           contact
         </li>
-        <button type="button" class="btn btn-secondary">Sign-in</button>
+        <button type="button" className="btn btn-secondary">Sign-in</button>
       </ul>
     </nav>
             
