@@ -13,7 +13,7 @@ function UserNav() {
               <Link className="nav-link" to="/workout">Workout</Link>
             
             
-              <Link className="nav-link" to="/myworkout">My Workout</Link>
+              <Link className="nav-link" to="/dashboard">My Workout</Link>
             
          
           

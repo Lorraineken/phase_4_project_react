@@ -10,7 +10,7 @@ import Signup from './components/Signup';
 import LogIn from './components/LogIn';
 import About from './components/About'
 import Workout from './components/Workout';
-
+import Dashboard from './components/Dashboard';
 import PasswordChange from './components/PasswordChange';
 
 import LogOut from './components/LogOut';
@@ -40,6 +40,7 @@ function App() {
 
         <Route path="/pwchange" element={<PasswordChange />}/>
         <Route path="/logout" element ={<LogOut />}/>
+        <Route path="/Dashboard" element ={<Dashboard/>}/>
       </Routes>
       
     </div>
