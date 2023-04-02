@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import { Route,Routes} from 'react-router-dom';
 import './App.css';
 // import Navbar from './componets/Navbar';
@@ -19,6 +19,13 @@ function App() {
     
      const [currentusername, setCurrentname] = useState('')
      const [currentuserId, setUserId] = useState('')
+     const [workouts,setWorkouts] = useState([])
+     
+     useEffect(() => {
+      fetch('https://palm-gym-api.onrender.com/workouts')
+        .then((response) => response.json())
+        .then((data) => setWorkouts(data))
+    }, []);
 
       
   return (
@@ -38,11 +45,11 @@ function App() {
         element={<LogIn setCurrentname={setCurrentname} setUserId={setUserId} />}
         />
         <Route path="/about"  element={<About />}/>
-        <Route path="/workout"  element={<Workout />}/>
+        <Route path="/workout"  element={<Workout  />}/>
 
         <Route path="/pwchange" element={<PasswordChange />}/>
         <Route path="/logout" element ={<LogOut />}/>
-        <Route path="/Dashboard" element ={<Dashboard currentusername={currentusername} currentuserId={currentuserId}/>}/>
+        <Route path="/Dashboard" element ={<Dashboard currentusername={currentusername} currentuserId={currentuserId} workouts={workouts}/>}/>
       </Routes>
       
     </div>
