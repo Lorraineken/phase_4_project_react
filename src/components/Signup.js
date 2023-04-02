@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import './signup.css'
+
 function Signup(){
 
     const SIGNUP_URL = 'https://palm-gym-api.onrender.com/signup'
@@ -52,26 +52,19 @@ function Signup(){
     }
 
     return (
-        <div id="signup_home"> 
-            <div id="sign-up">
-            <form  className="card container mt-5" onSubmit={(e) => handleSubmit(e)}  >
+        <div> 
+           <form className="card container mt-5" onSubmit={(e) => handleSubmit(e)}  >
           <h4 className="card-header">New Palm Member</h4>
           <label htmlFor="name">Full Name: </label>
-          <input id="inputs" type="text" name="full_name" onChange={(e) => setFullName(e.target.value)} />
+          <input type="text" name="full_name" onChange={(e) => setFullName(e.target.value)} />
           <label htmlFor="name">User Name: </label>
-          <input id="inputs" type="text" name="user_name" onChange={(e) => setUserName(e.target.value)} />
+          <input type="text" name="user_name" onChange={(e) => setUserName(e.target.value)} />
           <label htmlFor="email">Email: </label>
-          <input id="inputs" type="text" name="email"  onChange={(e) => setEmail(e.target.value)}/>
+          <input type="text" name="email"  onChange={(e) => setEmail(e.target.value)}/>
           <label htmlFor="password">Password: </label>
-          <input id="inputs" type="text" name="password" onChange={(e) => setPassword(e.target.value)}/>
-          <input id="submit" class="btn btn-success" type="submit" value="Join Palm Gym" />
+          <input type="text" name="password" onChange={(e) => setPassword(e.target.value)}/>
+          <input type="submit" value="Join Palm Gym" />
          </form>
-
-        </div>
-        <img id="signup-img"
-        className="login__logo"
-        src="https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&w=600"
-      />
         </div>
     )
 }

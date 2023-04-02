@@ -1,11 +1,10 @@
-
 p{
     color: black;
 }
 #card{
     margin-left: 100px;
     width: 200px;
-    background-color: #FFA500;
+    background-color: rgb(97, 22, 22);
     box-shadow: 0 4px 8px 0 rgba(34, 244, 69, 0.2), 0 6px 20px 0 rgba(70, 233, 24, 0.19);
     border-radius:15px 50px;
 }
@@ -14,15 +13,4 @@ p{
     transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(14, 218, 233, 0.12), 0 4px 8px rgba(25, 232, 215, 0.06);
   
-  }
-  #exercise_btn{
-    background-color: #000000 ;
-    border-radius: 10px;
-    color:#FFA500;
-    margin-bottom: 10px;
-  }
-  #workout_btn{
-    background-color: #0a0a0a ;
-    border-radius: 10px;
-    color:#FFA500;
   }
