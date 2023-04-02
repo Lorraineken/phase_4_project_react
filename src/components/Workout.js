@@ -82,10 +82,10 @@ function Workout({currentusername}) {
                 <h4 className="card-title">Name: {workout.name}</h4>
                 <p className="card-text">Instructor: {workout.instructor}</p>
                 <p className="card-text">Category: {workout.category}</p>
-                <button onClick={() => handleExerciseClick(workout.id)}>
+                <button id="exercise_btn" onClick={() => handleExerciseClick(workout.id)}>
                   My exercise
                 </button>
-                <button onClick={() => handleAddToFavourites(workout)}>
+                <button id="workout_btn" onClick={() => handleAddToFavourites(workout)}>
                   Add workout
                 </button>
                 {selectedWorkoutId === workout.id && showExerciseForm && (
