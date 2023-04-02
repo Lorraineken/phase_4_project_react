@@ -26,10 +26,22 @@ function PasswordChange(){
                    },
                    body:JSON.stringify(formdata)
                 })
+                .then((response) => {
+                    if (response.ok){
+                        response.json().then(() => { alert("Password Change was successful")
+                        navigate('/login')})
+                    }
+                    else{
+                        response.json().then((errorMessage) => 
+                        {
+                            alert('Wrong user_name or email')
+                        } )
+                    }
+                })
             }
         })
      })
-     navigate("/login")
+     
 
     }
 
