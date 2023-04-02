@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import axios from 'axios'
-
+import './Dashboard.css'
 function Dashboard({currentusername,currentuserId,workouts}){
 
      const [workout_id,setWorkoutId] = useState()
@@ -20,8 +20,8 @@ function Dashboard({currentusername,currentuserId,workouts}){
       
     const displayworkouts = workouts.map((item) => {
         return(
-            <ul key={`${item.name}-${item.id} -${item.index}`} className="row">
-            <li className="col">{item.id}  {item.name}</li> 
+            <ul class="list-group" key={`${item.name}-${item.id} -${item.index}`} className="col">
+            <li class="list-group-item" className="col">{item.id}  {item.name}</li> 
          </ul>
         )
        

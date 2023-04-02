@@ -26,3 +26,19 @@ p{
     border-radius: 10px;
     color:#FFA500;
   }
+  .workout-container {
+    /* background-image: url('../images/workoutbg-1.jpg'); */
+    background-size: cover;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+  }
+  #h4{
+    color: white;
+  }
+  #close_btn{
+    border-radius: 20px;
+    background-color: red;
+    color: white;
+  }

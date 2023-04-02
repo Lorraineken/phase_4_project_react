@@ -6,9 +6,9 @@ function UserNav({currentusername}) {
   return (
 
     
-      <div className="navbar navbar-light bg-">
+      <div className="navbar navbar-dark bg-dark">
 
-        <Link className="navbar-brand" to="/">PalmGym</Link>
+        <Link className="navbar-brand" to="/">PalmGym<span>.</span></Link>
         
       
               <Link className="nav-link" to="/workout">Workout</Link>
