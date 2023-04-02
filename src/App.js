@@ -45,7 +45,7 @@ function App() {
         element={<LogIn setCurrentname={setCurrentname} setUserId={setUserId} />}
         />
         <Route path="/about"  element={<About />}/>
-        <Route path="/workout"  element={<Workout  />}/>
+        <Route path="/workout"  element={<Workout currentusername={currentusername} />}/>
 
         <Route path="/pwchange" element={<PasswordChange />}/>
         <Route path="/logout" element ={<LogOut />}/>
