@@ -23,7 +23,7 @@ function Header() {
          
         </li>
         <li>
-        <NavLink to="/workout"> workout</NavLink>
+        <NavLink to="/workout">workout</NavLink>
         </li>
         <li>
           contact

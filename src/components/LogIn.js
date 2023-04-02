@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
-const LogIn = ({handleUserLoginAndSignup}) =>{
+const LogIn = ({setCurrentname,setUserId}) =>{
     // const history = useHistory()
     // const [state, setState] = useState({})
     // const onChange = (e) =>{
@@ -30,11 +30,26 @@ const LogIn = ({handleUserLoginAndSignup}) =>{
             body: JSON.stringify(formdata)
         }
         fetch('https://palm-gym-api.onrender.com/login',config)
-        .then(resp =>resp.json())
-        .then(data =>{
-            console.log(data)
-            navigate("/workout")
-        })
+        .then(response =>{
+        
+        
+            if (response.ok){
+                response.json().then((data) => {
+                    setCurrentname(data.user_name)
+                    setUserId(data.id)
+
+                    console.log("signup was successful")
+                   navigate("/workout")
+                });
+            }else{
+                response.json().then(() => 
+                {
+                    alert("Failed to login")
+                } )
+            
+        }
+    }
+        )
     }
     return(
         <div>
@@ -54,6 +69,7 @@ const LogIn = ({handleUserLoginAndSignup}) =>{
                 <strong >New User</strong>
                 <br />
                <Link to='/signup'><button>Signup</button></Link>
+               <Link to='/pwchange'><button>Reset Password</button></Link>
             </form>
         </div>
     )
