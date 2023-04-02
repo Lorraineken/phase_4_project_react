@@ -1,6 +1,13 @@
-import React from "react";
+import React,{useState} from "react";
 
 function Dashboard({currentusername,currentuserId,workouts}){
+
+     const [user_id,setUserId] = useState()
+     const [workout_id,setWorkoutId] = useState()
+     const [duration, setDuration]  = useState()
+     const [date, setDate] = useState()
+
+
     
     const displayworkouts = workouts.map((item) => {
         return(
@@ -10,7 +17,8 @@ function Dashboard({currentusername,currentuserId,workouts}){
         )
        
     })
-       console.log(workouts)
+
+    
     return(
         <div>
            <div>WELCOME</div> 
@@ -24,12 +32,12 @@ function Dashboard({currentusername,currentuserId,workouts}){
          <div className="container row ">
             <form className="card container col mt-3">
             <h4 className="card-header">New Workout</h4>
-            <label htmlFor="name" placeholder="Workout Name">Workout Number: </label>
-            <input type="text" name="full_name" />
-            <label htmlFor="name">Duration(In minutes): </label>
-            <input type="text" name="user_name"  />
-            <label htmlFor="date">Date(yyyymmdd): </label>
-            <input type="date-min" name="date"  />
+            <label htmlFor="name" placeholder="Workout Number">Workout Number: </label>
+            <input type="text" name="workout_number" />
+            <label htmlFor="name">Duration (In minutes): </label>
+            <input type="text" name="duration"  />
+            <label htmlFor="date">Date (yyyymmdd): </label>
+            <input type="text" name="date"  />
             <input type="submit" value="Add workout" />
             </form>
          </div>
