@@ -17,10 +17,11 @@ function PasswordChange(){
      .then((response) => response.json())
      .then((data) => {
         data.map((detail) =>{
+            
             if (detail.user_name === username && detail.email === email)
             {
                 fetch(`https://palm-gym-api.onrender.com/users/${detail.id}`,{
-                    method:"PATCH",
+                    method:"PUT",
                     headers: {
                       "Content-Type": "application/json",
                    },
