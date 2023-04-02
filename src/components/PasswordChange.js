@@ -1,10 +1,11 @@
 import React,{useState} from "react";
-
+import { useNavigate } from "react-router-dom";
 function PasswordChange(){
 
     const [username,setUsername] = useState('')
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
+    const navigate = useNavigate()
 
     const formdata = {
         "password":password
@@ -28,6 +29,8 @@ function PasswordChange(){
             }
         })
      })
+     navigate("/login")
+
     }
 
 return (

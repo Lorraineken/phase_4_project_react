@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import UserNav from './UserNav';
 
 
-function Workout() {
+function Workout({currentusername}) {
   const [workoutData, setWorkoutData] = useState([]);
   const [exerciseData, setExerciseData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -72,7 +72,7 @@ function Workout() {
 
   return (
     <div>
-      <UserNav/>
+      <UserNav currentusername={currentusername}/>
       <h4>Workouts</h4>
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {workoutData.map((workout) => (
