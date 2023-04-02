@@ -26,7 +26,7 @@ function App() {
         .then((response) => response.json())
         .then((data) => setWorkouts(data))
     }, []);
-
+       
       
   return (
     <div className="App">
