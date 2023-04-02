@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import axios from 'axios'
 
 function Dashboard({currentusername,currentuserId,workouts}){
 
@@ -29,7 +30,7 @@ function Dashboard({currentusername,currentuserId,workouts}){
     function handleSubmit(e){
         e.preventDefault()
         console.log(formdata)
-       fetch("https://palm-gym-api.onrender.com/exercise_logs",{
+       axios.get("https://palm-gym-api.onrender.com/exercise_logs",{
         method:"POST",
             headers: {
                 "Content-Type": "application/json",
