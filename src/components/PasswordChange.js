@@ -17,19 +17,32 @@ function PasswordChange(){
      .then((response) => response.json())
      .then((data) => {
         data.map((detail) =>{
+            
             if (detail.user_name === username && detail.email === email)
             {
                 fetch(`https://palm-gym-api.onrender.com/users/${detail.id}`,{
-                    method:"PATCH",
+                    method:"PUT",
                     headers: {
                       "Content-Type": "application/json",
                    },
                    body:JSON.stringify(formdata)
                 })
+                .then((response) => {
+                    if (response.ok){
+                        response.json().then(() => { alert("Password Change was successful")
+                        navigate('/login')})
+                    }
+                    else{
+                        response.json().then((errorMessage) => 
+                        {
+                            alert('Wrong user_name or email')
+                        } )
+                    }
+                })
             }
         })
      })
-     navigate("/login")
+     
 
     }
 
