@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import axios from 'axios'
-
+import './Dashboard.css'
 function Dashboard({currentusername,currentuserId,workouts}){
 
      const [workout_id,setWorkoutId] = useState()
@@ -20,9 +20,12 @@ function Dashboard({currentusername,currentuserId,workouts}){
       
     const displayworkouts = workouts.map((item) => {
         return(
-            <ul key={`${item.name}-${item.id} -${item.index}`} className="row">
-            <li className="col">{item.id}  {item.name}</li> 
-         </ul>
+            <div id="list">
+      <ul className="list-group list-group-horizontal" key={`${item.name}-${item.id} -${item.index}`}>
+        <li className="list-group-item">{item.id} {item.name}</li>
+      </ul>
+    </div>
+        
         )
        
     })
@@ -58,28 +61,32 @@ function Dashboard({currentusername,currentuserId,workouts}){
 
     
     return(
-        <div>
-           <div>WELCOME</div> 
+        <div id="gen_workout">
+           <div><h2 id="h2">WELCOME</h2></div> 
          {currentusername}
          <p>“The body achieves what the mind believes.” – Napoleon Hill </p>
          <h3>Workouts List</h3>
 
-         <div className="d-flex container ">
+         <div id="workout-form" className="d-flex container ">
               {displayworkouts}
            </div>  
-         <div className="container row ">
+         <div id="work_out" className="container row ">
             <form className="card container col mt-3" onSubmit={(e) => handleSubmit(e)}>
             <h4 className="card-header">New Workout</h4>
             <label htmlFor="name" placeholder="Workout Number">Workout Number: </label>
-            <input type="number" name="workout_number" onChange={(e) => setWorkoutId(e.target.value)}/>
+            <input id="inputs" type="number" name="workout_number" onChange={(e) => setWorkoutId(e.target.value)}/>
             <label htmlFor="name">Duration (In minutes): </label>
-            <input type="number" name="duration" onChange={(e)=> setDuration(e.target.value)} />
+            <input id="inputs" type="number" name="duration" onChange={(e)=> setDuration(e.target.value)} />
             <label htmlFor="date">Date (yyyymmdd): </label>
-            <input type="text" name="date" onChange={(e) => setDate(e.target.value)} />
-            <input type="submit" value="Add workout" />
+            <input id="inputs" type="text" name="date" onChange={(e) => setDate(e.target.value)} />
+            <input id="workout-btn" type="submit" value="Add workout" />
             </form>
+            <img id="signup-img"
+        className="login__logo"
+        src="https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&w=600"
+      />
          </div>
-        
+         
          
         </div>
     )

@@ -1,5 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import './About.css';
+import Header from "./Header";
 function About() {
   const classes = [
     { id: 1, name: "Yoga", time: "9:00am - 10:00am" },
@@ -11,11 +13,12 @@ function About() {
 
   return (
     <>
-      
+    <Header />
+      <div className="about-us"></div>
         <strong className="fs-2">About Us</strong>
         <br />
-        
-          Welcome to our gym! We believe that fitness is a journey, not a
+      <div className="about-us">
+      Welcome to our gym! We believe that fitness is a journey, not a
           destination. Our mission is to provide a welcoming and inclusive
           environment where people of all ages and fitness levels can come
           together to improve their health and well-being.
@@ -39,11 +42,15 @@ function About() {
           Thank you for considering our gym for your fitness journey. We can't
           wait to help you get started!
         </>
-      <hr />
-      <strong className="fs-1">Classes</strong>
-      <ul>
+
+      </div>
+        
+          
+      <hr /> <div id="classes-table" >
+        <strong className="fs-1">Classes</strong>
+      <ul class="list-group">
         {classes.map((classItem) => (
-          <li key={classItem.id}>
+          <li class="list-group-item" key={classItem.id}>
             <strong>{classItem.name}</strong>
             <br />
             {classItem.time}
@@ -51,8 +58,12 @@ function About() {
         ))}
       </ul>
       <Link to="/signup">
-       <button className="btn btn-secondary"> Become a member</button>
+       <button id="member_btn" className="btn btn-secondary"> Become a member</button>
       </Link>
+
+
+      </div>
+      
     </>
     
   );

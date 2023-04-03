@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import backgroundImage from "../images/workoutbg-1.jpg";
 import './Myworkout.css';
-
 import { Link } from 'react-router-dom';
-
 import UserNav from './UserNav';
-
 
 function Workout({currentusername}) {
   const [workoutData, setWorkoutData] = useState([]);
@@ -71,9 +69,16 @@ function Workout({currentusername}) {
   }
 
   return (
-    <div>
+    <div className="workout-container" style={{
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundSize: "cover",
+      height: "100vh",
+      // display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}>
       <UserNav currentusername={currentusername}/>
-      <h4>Workouts</h4>
+      <h4 id="h4">Workouts</h4>
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {workoutData.map((workout) => (
           <div id="card" className="col-3, p-1, mb-2" key={workout.id}>
@@ -82,17 +87,17 @@ function Workout({currentusername}) {
                 <h4 className="card-title">Name: {workout.name}</h4>
                 <p className="card-text">Instructor: {workout.instructor}</p>
                 <p className="card-text">Category: {workout.category}</p>
-                <button onClick={() => handleExerciseClick(workout.id)}>
+                <button  id="exercise_btn" onClick={() => handleExerciseClick(workout.id)}>
                   My exercise
                 </button>
-                <button onClick={() => handleAddToFavourites(workout)}>
+                <button id="workout_btn"  onClick={() => handleAddToFavourites(workout)}>
                   Add workout
                 </button>
                 {selectedWorkoutId === workout.id && showExerciseForm && (
                   <div className="exercise-form">
                     <div className="exercise-form-header">
-                      <h4>My exercise</h4>
-                      <button onClick={handleCloseExerciseForm}>X</button>
+                      <h4 >My exercise</h4>
+                      <button id="close_btn" onClick={handleCloseExerciseForm}>X</button>
                     </div>
                     {exerciseData.map((exercise) => (
                       <ul key={exercise.id}>

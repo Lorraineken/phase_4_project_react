@@ -11,8 +11,8 @@ import About from './components/About'
 import Workout from './components/Workout';
 import Dashboard from './components/Dashboard';
 import PasswordChange from './components/PasswordChange';
-
 import LogOut from './components/LogOut';
+import Footer from './components/Footer'
 
 function App() {
 
@@ -50,8 +50,9 @@ function App() {
         <Route path="/pwchange" element={<PasswordChange />}/>
         <Route path="/logout" element ={<LogOut />}/>
         <Route path="/Dashboard" element ={<Dashboard currentusername={currentusername} currentuserId={currentuserId} workouts={workouts}/>}/>
+        
       </Routes>
-      
+      <Footer/>
     </div>
   );
 }

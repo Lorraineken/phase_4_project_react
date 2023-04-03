@@ -1,0 +1,21 @@
+.fs-2{
+    color: white;
+}
+.about-us{
+    margin-left: 350px;
+    width: 550px;
+    color: white;
+}
+.fs-1{
+    color: white;
+}
+#classes-table{
+    margin-left: 350px;
+    width: 550px;
+}
+#member_btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: orange;
+    color: white;
+}
