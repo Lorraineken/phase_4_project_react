@@ -28,7 +28,7 @@ const HomePage = () => {
             <br />
             Hub<span>.</span>
           </h1>
-          <h2>no pain no gain</h2>
+          <h2 id="pain" >No Pain no Gain</h2>
           <button
             type="button"
             class="btn btn-light"

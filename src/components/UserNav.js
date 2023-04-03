@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './UserNav.css';
 
 function UserNav({currentusername}) {
   return (
@@ -14,7 +14,7 @@ function UserNav({currentusername}) {
             
             
               <Link className="nav-link" to="/dashboard">My Workout</Link>
-            <span>{currentusername}</span>
+            <span id="username" >{currentusername}</span>
          
           
             <Link id="logout-btn" className="btn btn-secondary" to="/logout">Logout</Link>
